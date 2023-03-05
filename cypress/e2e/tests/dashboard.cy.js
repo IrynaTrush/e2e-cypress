@@ -17,7 +17,23 @@ describe('example to-do app', () => {
     // .should('have.attr', 'href').and('include', 'contact')
   });
 
-  it('Verify todo items', () => {
-    cy.visit('http://localhost:4200/todo');
+  it('Check todo page title', () => {
+    cy.visit('/todo');
+    cy.get(S.title).should('have.text', 'Todo list');
+  });
+
+  it('Check posts page title', () => {
+    cy.visit('/posts');
+    cy.get(S.title).should('have.text', 'Posts');
+  });
+
+  it('Check gallery page title', () => {
+    cy.visit('/gallery');
+    cy.get(S.title).should('have.text', 'Gallery');
+  });
+
+  it('Check about page title', () => {
+    cy.visit('http://localhost:4200/about');
+    cy.get(S.title).should('have.text', 'About');
   });
 });
